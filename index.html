@@ -3,230 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- This is your page title -->
-    <title>Inzamul Hoque Rafi | Tech Enthusiast</title>
-
+    <title>Inzamul Hoque Rafi | Home</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-
     <style>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        'brand': {
-                            'light': '#2dd4bf', 
-                            'DEFAULT': '#14b8a6',
-                            'dark': '#0d9488' 
-                        },
-                        'dark': {
-                            'bg': '#0f172a',    
-                            'card': '#1e293b',  
-                            'text': '#f1f5f9',   
-                            'secondary': '#94a3b8' 
-                        }
-                    }
-                }
-            }
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animated-gradient {
+            background: linear-gradient(-45deg, #020617, #030a24, #0f172a, #0b2142);
+            background-size: 400% 400%;
+            animation: gradient-animation 15s ease infinite;
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.5); /* slate-900 with transparency */
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(51, 65, 85, 0.5); /* slate-700 with transparency */
         }
     </style>
 </head>
+<body class="animated-gradient text-slate-200 font-sans antialiased">
 
-<body class="bg-dark-bg text-dark-text font-sans antialiased">
-
-    <!-- ===== Header & Navigation Bar ===== -->
-    <header class="sticky top-0 z-50 w-full bg-dark-bg/80 backdrop-blur-md border-b border-dark-card">
-        <nav class="max-w-5xl mx-auto flex items-center justify-between p-6">
-            
-            <!-- Your Name -->
-            <a href="#home" class="text-2xl font-bold text-white">Inzamul Hoque Rafi</a>
-            
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="#about" class="text-dark-secondary hover:text-brand-light transition-colors">About</a>
-                <a href="#projects" class="text-dark-secondary hover:text-brand-light transition-colors">Projects</a>
-                <a href="#articles" class="text-dark-secondary hover:text-brand-light transition-colors">Articles</a>
-                
-                <!-- Contact Button -->
-                <a href="mailto:your-email@buet.ac.bd" class="px-4 py-2 bg-brand hover:bg-brand-dark text-white rounded-lg font-medium transition-colors">
-                    Contact
-                </a>
-            </div>
-
-            <!-- Mobile Menu Links (Simplified) -->
-            <div class="md:hidden flex space-x-4">
-                 <a href="#about" class="text-dark-secondary hover:text-brand-light transition-colors">About</a>
-                 <a href="#projects" class="text-dark-secondary hover:text-brand-light transition-colors">Projects</a>
+    <header class="sticky top-0 z-50 w-full glass-card border-b border-slate-700/50">
+        <nav class="max-w-6xl mx-auto flex items-center justify-between p-6">
+            <a href="index.html" class="text-2xl font-bold text-white">Inzamul Hoque Rafi</a>
+            <div class="flex items-center space-x-6 text-lg">
+                <a href="projects.html" class="text-slate-300 hover:text-cyan-400 transition-colors">Projects</a>
+                <a href="articles.html" class="text-slate-300 hover:text-cyan-400 transition-colors">Articles</a>
             </div>
         </nav>
     </header>
 
-    <!-- ===== Main Content ===== -->
-    <main class="max-w-5xl mx-auto p-6">
+    <main class="max-w-6xl mx-auto p-6">
 
-        <!-- ===== 1. Hero Section (Welcome) ===== -->
-        <section id="home" class="min-h-[70vh] flex flex-col items-center justify-center text-center py-20">
-            <h1 class="text-4xl md:text-6xl font-bold text-white">
-                <!-- Your Welcome Message -->
-                Hi, it's <span class="text-brand-light">Inzamul Hoque Rafi</span>
+        <section class="min-h-[70vh] flex flex-col items-center justify-center text-center py-20">
+            <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight">
+                Building the Future with <br> <span class="text-cyan-400">Engineering & Code</span>
             </h1>
-            <p class="mt-4 text-xl md:text-2xl text-dark-secondary max-w-2xl">
-                <!-- Your Subtitle -->
-                I'm a tech and research enthusiast. Welcome to my site.
+            <p class="mt-6 text-xl md:text-2xl text-slate-400 max-w-3xl">
+                A first-year engineering student at BUET passionate about electrochemistry and creating sustainable energy solutions.
             </p>
-            <div class="mt-8 flex flex-wrap justify-center gap-4">
-                
-                <!-- Link to your LinkedIn -->
-                <a href="#" class="px-6 py-3 bg-brand hover:bg-brand-dark text-white rounded-lg font-medium transition-colors text-lg">
-                    My LinkedIn Profile
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <a href="projects.html" class="px-8 py-4 bg-cyan-500 hover:bg-cyan-600 text-slate-900 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 text-lg">
+                    View My Work
                 </a>
-                
-                <!-- Link to your GitHub -->
-                <a href="#" class="px-6 py-3 bg-dark-card hover:bg-slate-600 text-dark-text rounded-lg font-medium transition-colors text-lg">
-                    View My GitHub
+                <a href="mailto:inzamulhoquerafi@gmail.com" class="px-8 py-4 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700 text-white rounded-lg font-medium transition-all duration-300 transform hover:scale-105 text-lg">
+                    Contact Me
                 </a>
             </div>
         </section>
 
-        <!-- ===== 2. About Me Section ===== -->
-        <section id="about" class="py-16 md:py-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-16">
-                About Me
-            </h2>
-            
-            <!-- Container for your photo and bio -->
-            <div class="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16">
-                
-                <!-- Your Profile Photo -->
-                <!-- This looks for the 'profile.jpg' file you will upload -->
-                <img 
-                    src="profile.jpg" 
-                    alt="Inzamul Hoque Rafi" 
-                    class="w-64 h-64 rounded-full object-cover object-top shadow-xl"
-                    onerror="this.src='https://placehold.co/256x256/1e293b/f1f5f9?text=Rafi';" 
-                >
-
-                <!-- This div holds your bio text -->
-                <div class="max-w-xl text-lg text-dark-secondary leading-relaxed space-y-6 text-center md:text-left">
-                    <!-- Your Bio -->
-                    <p>
-                        Hello! I'm a first-year engineering student at BUET. My journey in engineering is driven by a deep curiosity for how the world works, which has recently become a passion for electrochemistry and sustainable energy systems.
-                    </p>
-                    <p>
-                        I believe that developing more efficient and affordable power sources is one of the biggest challenges our generation faces, and it's a problem I want to help solve. When I'm not studying physics or math, I enjoy bodybuilding and exploring new topics in technology.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== 3. Projects Section ===== -->
-        <section id="projects" class="py-16 md:py-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">
-                My Projects
-            </h2>
+        <section class="py-16 md:py-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">Featured Work</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
-                <!-- Project 1 -->
-                <div class="bg-dark-card p-6 rounded-xl shadow-lg transform hover:-translate-y-1 transition-transform">
-                    <h3 class="text-2xl font-semibold text-white mb-3">Project Title 1</h3>
-                    <p class="text-dark-secondary mb-4">
-                        A short description of your project. What problem did it solve? What technology did you use?
+                <a href="projects.html" class="glass-card p-8 rounded-2xl group transition-all duration-300 hover:border-cyan-400/50 hover:-translate-y-2">
+                    <h3 class="text-2xl font-semibold text-white mb-3">My Projects</h3>
+                    <p class="text-slate-400 mb-6">
+                        Explore a collection of my technical projects, from university problem sets to personal coding experiments.
                     </p>
-                    <!-- Link to your project -->
-                    <a href="#" class="font-medium text-brand-light hover:text-brand-dark transition-colors">
-                        View Project on GitHub &rarr;
-                    </a>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="bg-dark-card p-6 rounded-xl shadow-lg transform hover:-translate-y-1 transition-transform">
-                    <h3 class="text-2xl font-semibold text-white mb-3">Project Title 2</h3>
-                    <p class="text-dark-secondary mb-4">
-                        This is a great place to link to a complex problem set you solved, or any personal website/app you build.
+                    <p class="font-bold text-cyan-400 transition-transform duration-300 group-hover:translate-x-2">
+                        View All Projects &rarr;
                     </p>
-                    <!-- Link to your project -->
-                    <a href="#" class="font-medium text-brand-light hover:text-brand-dark transition-colors">
-                        View Project on GitHub &rarr;
-                    </a>
-                </div>
-            </div>
-        </section>
+                </a>
 
-        <!-- ===== 4. Articles Section ===== -->
-        <section id="articles" class="py-16 md:py-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">
-                My Articles &amp; Writing
-            </h2>
-            <div class="max-w-3xl mx-auto space-y-8">
-
-                <!-- Article 1 -->
-                <div class="bg-dark-card p-6 rounded-xl shadow-lg flex items-center space-x-6">
-                    <div class="flex-shrink-0">
-                        <!-- Icon -->
-                        <div class="w-16 h-16 bg-brand-dark rounded-lg flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-light"><path d="M2 17h20"></path><path d="M6 17v-7a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v7"></path><path d="M8 7v-2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-semibold text-white mb-2">
-                            Overview: The Future of Battery Technology
-                        </h3>
-                        <p class="text-dark-secondary mb-3">
-                            A high-level overview of where battery technology is today and the exciting challenges in fields like solid-state and sodium-ion.
-                        </p>
-                        <!-- Link to your article -->
-                        <a href="#" class="font-medium text-brand-light hover:text-brand-dark transition-colors">
-                            Read Article &rarr;
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Article 2 -->
-                <div class="bg-dark-card p-6 rounded-xl shadow-lg flex items-center space-x-6">
-                     <div class="flex-shrink-0">
-                        <!-- Icon -->
-                        <div class="w-16 h-16 bg-brand-dark rounded-lg flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-light"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path></svg>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-semibold text-white mb-2">
-                            My First-Year Engineering Learnings
-                        </h3>
-                        <p class="text-dark-secondary mb-3">
-                            A place to document what you're learning in your classes, what you find interesting, and your goals.
-                        </p>
-                        <!-- Link to your article -->
-                        <a href="#" class="font-medium text-brand-light hover:text-brand-dark transition-colors">
-                            Read Article &rarr;
-                        </a>
-                    </div>
-                </div>
-
+                <a href="articles.html" class="glass-card p-8 rounded-2xl group transition-all duration-300 hover:border-cyan-400/50 hover:-translate-y-2">
+                    <h3 class="text-2xl font-semibold text-white mb-3">My Articles</h3>
+                    <p class="text-slate-400 mb-6">
+                        Read my thoughts and findings on topics in technology, engineering, and personal development.
+                    </p>
+                    <p class="font-bold text-cyan-400 transition-transform duration-300 group-hover:translate-x-2">
+                        View All Articles &rarr;
+                    </p>
+                </a>
             </div>
         </section>
 
     </main>
 
-    <!-- ===== Footer ===== -->
-    <footer class="border-t border-dark-card mt-16">
-        <div class="max-w-5xl mx-auto p-6 text-center text-dark-secondary">
-            <div class="flex justify-center space-x-6 mb-4">
-                 <!-- Add your real links here -->
-                <a href="#" class="hover:text-brand-light transition-colors">LinkedIn</a>
-                <a href="#" class="hover:text-brand-light transition-colors">GitHub</a>
-                <a href="mailto:your-email@buet.ac.bd" class="hover:text-brand-light transition-colors">Email</a>
-            </div>
-            
+    <footer class="border-t border-slate-700/50 mt-16">
+        <div class="max-w-6xl mx-auto p-6 text-center text-slate-400">
             <p>&copy; 2025 Inzamul Hoque Rafi. All rights reserved.</p>
         </div>
     </footer>
 
 </body>
 </html>
-
