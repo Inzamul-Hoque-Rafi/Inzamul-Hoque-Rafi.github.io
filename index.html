@@ -3,155 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inzamul Hoque Rafi | Tech Enthusiast</title>
+    <title>Inzamul Hoque Rafi | Home</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Simple fade-in on scroll animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        body { animation: fadeIn 0.8s ease-in-out; }
+        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
-<body class="bg-black text-white font-sans antialiased">
+<body class="bg-zinc-900 text-zinc-200 font-sans antialiased">
 
-    <header class="sticky top-0 z-50 w-full bg-black/70 backdrop-blur-md border-b border-gray-800">
+    <header class="w-full">
         <nav class="max-w-5xl mx-auto flex items-center justify-between p-6">
-            <a href="#home" class="text-2xl font-bold text-white">Inzamul Hoque Rafi</a>
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="#about" class="hover:text-yellow-400 transition-colors">About</a>
-                <a href="#projects" class="hover:text-yellow-400 transition-colors">Projects</a>
-                <a href="#articles" class="hover:text-yellow-400 transition-colors">Articles</a>
-                <a href="#contact" class="hover:text-yellow-400 transition-colors">Contact</a>
+            <a href="index.html" class="text-xl font-bold text-white">Inzamul Hoque Rafi</a>
+            <div class="flex items-center space-x-8 text-base">
+                <a href="projects.html" class="text-zinc-300 hover:text-amber-400 transition-colors">Projects</a>
+                <a href="articles.html" class="text-zinc-300 hover:text-amber-400 transition-colors">Articles</a>
             </div>
         </nav>
     </header>
 
     <main class="max-w-5xl mx-auto p-6">
 
-        <section id="home" class="min-h-[70vh] flex flex-col justify-center py-20">
-            <h1 class="text-5xl md:text-7xl font-bold text-yellow-400 leading-tight reveal">Inzamul Hoque Rafi</h1>
-            <p class="mt-4 text-2xl md:text-3xl text-white max-w-3xl reveal" style="transition-delay: 150ms;">
-                Engineering Student & Tech Enthusiast.
-            </p>
-            <p class="mt-6 text-lg text-gray-300 max-w-2xl reveal" style="transition-delay: 300ms;">
-                Exploring electrochemistry and sustainable energy at BUET. Welcome to my personal site where I document my work and learning journey.
+        <section class="min-h-[60vh] flex flex-col justify-center text-center items-center py-20">
+            <h1 class="text-4xl md:text-6xl font-bold text-amber-400 leading-tight reveal">Engineer. Thinker. Builder.</h1>
+            <p class="mt-6 text-lg md:text-xl text-zinc-300 max-w-2xl reveal" style="transition-delay: 150ms;">
+                I'm an engineering student at BUET exploring sustainable energy and technology. This is my space to share what I'm building and learning.
             </p>
         </section>
 
-        <section id="about" class="py-16 md:py-24">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
-                <div class="md:col-span-1 reveal">
-                    <img 
-                        src="profile.jpg" 
-                        alt="Inzamul Hoque Rafi" 
-                        class="rounded-lg shadow-2xl w-full"
-                        onerror="this.src='https://placehold.co/400x400/171717/facc15?text=Rafi';" 
-                    >
-                </div>
-                <div class="md:col-span-2 reveal" style="transition-delay: 150ms;">
-                    <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 mb-6">About Me</h2>
-                    <div class="space-y-4 text-lg text-gray-200">
-                        <p>
-                            Hello! I'm a first-year engineering student driven by a deep curiosity for how the world works. My primary academic passion is in electrochemistry and finding sustainable energy systems to solve real-world challenges.
-                        </p>
-                        <p>
-                            Outside of my studies, I am committed to bodybuilding, which instills discipline and focus. This site is a showcase of my projects and a place for my thoughts on technology and engineering.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="py-16 md:py-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-yellow-400 mb-12 reveal">My Projects</h2>
+        <section class="py-16 md:py-24">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 stagger-container">
                 
-                <a href="#" class="block bg-zinc-900 p-8 rounded-lg border border-gray-800 transition-all duration-300 hover:border-yellow-400 hover:-translate-y-2 reveal">
-                    <h3 class="text-2xl font-semibold text-yellow-400 mb-3">Project Title 1</h3>
-                    <p class="text-gray-300">A short description of your project. What problem did it solve? What technology did you use?</p>
+                <a href="projects.html" class="block bg-zinc-800 p-10 rounded-lg border border-zinc-700 transition-all duration-300 hover:border-amber-400 hover:-translate-y-2 reveal">
+                    <h2 class="text-2xl font-semibold text-amber-400 mb-3">View My Projects</h2>
+                    <p class="text-zinc-400">A curated list of my technical work, from academic challenges to personal explorations in code.</p>
                 </a>
 
-                <a href="#" class="block bg-zinc-900 p-8 rounded-lg border border-gray-800 transition-all duration-300 hover:border-yellow-400 hover:-translate-y-2 reveal">
-                    <h3 class="text-2xl font-semibold text-yellow-400 mb-3">Project Title 2</h3>
-                    <p class="text-gray-300">This is a great place to link to a complex problem set you solved, or any personal website/app you build.</p>
+                <a href="articles.html" class="block bg-zinc-800 p-10 rounded-lg border border-zinc-700 transition-all duration-300 hover:border-amber-400 hover:-translate-y-2 reveal">
+                    <h2 class="text-2xl font-semibold text-amber-400 mb-3">Read My Articles</h2>
+                    <p class="text-zinc-400">My thoughts and analysis on engineering concepts, technology trends, and continuous learning.</p>
                 </a>
-
             </div>
-        </section>
-
-        <section id="articles" class="py-16 md:py-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-yellow-400 mb-12 reveal">Articles & Writing</h2>
-            <div class="max-w-3xl mx-auto space-y-6 stagger-container">
-
-                <a href="#" class="block bg-zinc-900 p-6 rounded-lg border border-gray-800 transition-all duration-300 hover:border-yellow-400 hover:-translate-y-1 reveal">
-                    <h3 class="text-xl font-semibold text-yellow-400 mb-2">Overview: The Future of Battery Technology</h3>
-                    <p class="text-gray-300">A high-level overview of where battery technology is today and the exciting challenges in fields like solid-state and sodium-ion.</p>
-                </a>
-
-                <a href="#" class="block bg-zinc-900 p-6 rounded-lg border border-gray-800 transition-all duration-300 hover:border-yellow-400 hover:-translate-y-1 reveal">
-                    <h3 class="text-xl font-semibold text-yellow-400 mb-2">My First-Year Engineering Learnings</h3>
-                    <p class="text-gray-300">A place to document what you're learning in your classes, what you find interesting, and your goals.</p>
-                </a>
-
-            </div>
-        </section>
-
-        <section id="contact" class="py-16 md:py-24 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 mb-4 reveal">Get In Touch</h2>
-            <p class="text-lg text-gray-300 max-w-xl mx-auto mb-8 reveal" style="transition-delay: 150ms;">
-                I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out.
-            </p>
-            <a href="mailto:inzamulhoquerafi@gmail.com" class="inline-block bg-yellow-400 text-black font-bold text-lg px-8 py-4 rounded-lg transition-transform duration-300 hover:scale-105 reveal" style="transition-delay: 300ms;">
-                Say Hello
-            </a>
         </section>
 
     </main>
 
-    <footer class="border-t border-gray-800">
-        <div class="max-w-5xl mx-auto p-6 text-center text-gray-400">
-            <p>&copy; 2025 Inzamul Hoque Rafi. All rights reserved.</p>
+    <footer class="border-t border-zinc-800 mt-16">
+        <div class="max-w-5xl mx-auto p-6 text-center text-zinc-400">
+            <p>&copy; 2025 Inzamul Hoque Rafi</p>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
+                entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } });
             }, { threshold: 0.1 });
-
-            document.querySelectorAll('.reveal').forEach(el => {
-                observer.observe(el);
-            });
-
+            document.querySelectorAll('.reveal').forEach(el => { observer.observe(el); });
             const staggerObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const children = entry.target.querySelectorAll('.reveal');
-                        children.forEach((child, index) => {
-                            child.style.transitionDelay = `${index * 150}ms`;
-                        });
+                        children.forEach((child, index) => { child.style.transitionDelay = `${index * 150}ms`; });
                         observer.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.1 });
-
-            document.querySelectorAll('.stagger-container').forEach(container => {
-                staggerObserver.observe(container);
-            });
+            document.querySelectorAll('.stagger-container').forEach(container => { staggerObserver.observe(container); });
         });
     </script>
 </body>
