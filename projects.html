@@ -26,46 +26,80 @@
 </head>
 <body class="bg-black text-white font-sans antialiased">
 
-    <!-- ===== Header & Navigation Bar ===== -->
-    <header class="sticky top-0 z-50 w-full bg-black/80 backdrop-blur-md border-b border-dark-card">
+    <header class="sticky top-0 z-50 w-full bg-orange-500 border-b border-orange-700">
         <nav class="max-w-5xl mx-auto flex items-center justify-between p-6">
             <a href="index.html" class="text-2xl font-bold text-white">Inzamul Hoque Rafi</a>
             <div class="hidden md:flex items-center space-x-6">
-                <a href="index.html#about" class="text-white hover:text-brand-light transition-colors duration-300">About</a>
-                <!-- This is the active page -->
-                <a href="projects.html" class="text-brand-light font-semibold">Projects</a>
-                <a href="articles.html" class="text-white hover:text-brand-light transition-colors duration-300">Articles</a>
+                <a href="index.html#about" class="text-white font-bold hover:text-black transition-colors duration-300">About</a>
+                <a href="projects.html" class="text-black font-semibold">Projects</a>
+                <a href="articles.html" class="text-white font-bold hover:text-black transition-colors duration-300">Articles</a>
                 <a href="index.html#contact" class="px-4 py-2 bg-brand hover:bg-brand-dark text-white rounded-lg font-medium transition-all duration-300 transform hover:scale-105">
                     Contact
                 </a>
             </div>
             <div class="md:hidden flex space-x-4">
-                 <a href="index.html#about" class="text-white hover:text-brand-light transition-colors">About</a>
-                 <a href="projects.html" class="text-brand-light font-semibold">Projects</a>
-                 <a href="articles.html" class="text-white hover:text-brand-light transition-colors">Articles</a>
+                 <a href="index.html#about" class="text-white font-bold hover:text-black transition-colors">About</a>
+                 <a href="projects.html" class="text-black font-semibold">Projects</a>
+                 <a href="articles.html" class="text-white font-bold hover:text-black transition-colors">Articles</a>
             </div>
         </nav>
     </header>
 
-    <!-- ===== Main Content ===== -->
-    <main class="max-w-5xl mx-auto p-6">
-        <div class="min-h-[70vh] flex flex-col items-center justify-center text-center py-20">
-            <h1 class="text-4xl md:text-6xl font-bold text-white">
-                Projects
-            </h1>
-            <p class="mt-4 text-2xl md:text-3xl text-brand-light">
-                Coming Soon
-            </p>
-            <p class="mt-4 text-xl text-white max-w-lg">
-                This page is under construction. I'm currently preparing my projects to showcase them here. Please check back soon!
-            </p>
-            <div class="mt-12">
-                <a href="index.html" class="px-6 py-3 bg-brand hover:bg-brand-dark text-white rounded-lg font-medium transition-all duration-300 transform hover:scale-105 text-lg">
-                    &larr; Go Back Home
+    <main class="max-w-5xl mx-auto p-6 py-16 md:py-24">
+        <h1 class="text-4xl md:text-5xl font-bold text-center text-white mb-4">
+            My Projects
+        </h1>
+        <p class="text-xl text-dark-secondary text-center max-w-2xl mx-auto mb-16">
+            Here are some of the projects I've worked on, showcasing my skills in development, data analysis, and engineering.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <div class="bg-dark-card p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:border-brand border border-transparent">
+                <h3 class="text-2xl font-semibold text-white mb-3">Personal Portfolio Website</h3>
+                <p class="text-dark-secondary mb-4">
+                    This very website was built to explore AI-assisted development. The process involved collaborating with an AI to generate, refine, and debug the HTML and Tailwind CSS code, focusing on creating a clean, responsive, and modern user interface.
+                </p>
+                <a href="https://github.com/Inzamul-Hoque-Rafi/inzamul-hoque-rafi.github.io" target="_blank" rel="noopener noreferrer" class="font-medium text-brand-light hover:text-brand-dark transition-colors">
+                    View Code on GitHub &rarr;
                 </a>
             </div>
+
+            <div class="bg-dark-card p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:border-brand border border-transparent">
+                <h3 class="text-2xl font-semibold text-white mb-3">Material Property Data Visualization</h3>
+                <p class="text-dark-secondary mb-4">
+                    Developed a Python script to process and visualize experimental data for steel alloys. The project utilized libraries like Pandas for data manipulation and Matplotlib to plot key relationships, making complex data sets easy to interpret.
+                </p>
+                <a href="#" class="font-medium text-brand-light hover:text-brand-dark transition-colors">
+                    View Project on GitHub &rarr;
+                </a>
+            </div>
+
+            <div class="bg-dark-card p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:border-brand border border-transparent">
+                <h3 class="text-2xl font-semibold text-white mb-3">Project Title 3</h3>
+                <p class="text-dark-secondary mb-4">
+                    A brief but engaging description of another one of your projects will go here. Focus on the problem you solved and the technologies or methods you used.
+                </p>
+                <a href="#" class="font-medium text-brand-light hover:text-brand-dark transition-colors">
+                    Coming Soon &rarr;
+                </a>
+            </div>
+
         </div>
     </main>
+
+    <footer class="border-t border-dark-card mt-16">
+        <div class="max-w-5xl mx-auto p-6 text-center text-dark-secondary">
+            <div class="flex flex-wrap justify-center items-center gap-6 mb-4">
+               <a href="https://www.linkedin.com/in/inzamul-hoque-rafi-a84482390" target="_blank" rel="noopener noreferrer" class="hover:text-brand-light transition-colors duration-300">LinkedIn</a>
+               <a href="https://github.com/Inzamul-Hoque-Rafi" target="_blank" rel="noopener noreferrer" class="hover:text-brand-light transition-colors duration-300">GitHub</a>
+               <a href="https://www.facebook.com/inzamul.hoque.849577" target="_blank" rel="noopener noreferrer" class="hover:text-brand-light transition-colors duration-300">Facebook</a>
+               <a href="mailto:inzamulhoquerafi@gmail.com" class="hover:text-brand-light transition-colors duration-300">Email</a>
+            </div>
+            
+            <p>&copy; 2025 Inzamul Hoque Rafi. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
