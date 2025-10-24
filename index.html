@@ -55,8 +55,8 @@
                 <a href="#articles" class="text-white hover:text-brand-light transition-colors duration-300">Articles</a>
                 
                 <!-- Contact Button -->
-                <!-- UPDATE: Added your email -->
-                <a href="mailto:inzamulhoquerafi@gmail.com" class="px-4 py-2 bg-brand hover:bg-brand-dark text-white rounded-lg font-medium transition-all duration-300 transform hover:scale-105">
+                <!-- UPDATE: Changed link to point to #contact section -->
+                <a href="#contact" class="px-4 py-2 bg-brand hover:bg-brand-dark text-white rounded-lg font-medium transition-all duration-300 transform hover:scale-105">
                     Contact
                 </a>
             </div>
@@ -226,6 +226,40 @@
             </div>
         </section>
 
+        <!-- ===== 5. Contact Section (NEW) ===== -->
+        <section id="contact" class="py-16 md:py-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">
+                Get In Touch
+            </h2>
+            <div class="max-w-xl mx-auto p-8 bg-dark-card rounded-xl shadow-lg">
+                <form action="https://formsubmit.co/inzamulhoquerafi@gmail.com" method="POST">
+                    <div class="space-y-6">
+                        <!-- Name -->
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-white mb-2">Your Name</label>
+                            <input type="text" name="name" id="name" required class="w-full bg-slate-800 border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-brand-light border">
+                        </div>
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-white mb-2">Your Email</label>
+                            <input type="email" name="email" id="email" required class="w-full bg-slate-800 border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-brand-light border">
+                        </div>
+                        <!-- Message -->
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-white mb-2">Message</label>
+                            <textarea name="message" id="message" rows="5" required class="w-full bg-slate-800 border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-brand-light border"></textarea>
+                        </div>
+                        <!-- Submit Button -->
+                        <div>
+                            <button type="submit" class="w-full px-6 py-3 bg-brand hover:bg-brand-dark text-white rounded-lg font-medium transition-all duration-300 transform hover:scale-105 text-lg">
+                                Send Message
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
     </main>
 
     <!-- ===== Footer ===== -->
@@ -236,8 +270,8 @@
                  <!-- UPDATE: Added real links -->
                 <a href="https://www.linkedin.com/in/inzamul-hoque-rafi-a84482390" target="_blank" rel="noopener noreferrer" class="hover:text-brand-light transition-colors duration-300">LinkedIn</a>
                 <a href="https://github.com/Inzamul-Hoque-Rafi" target="_blank" rel="noopener noreferrer" class="hover:text-brand-light transition-colors duration-300">GitHub</a>
-                <!-- UPDATE: Added your email -->
-                <a href="mailto:inzamulhoquerafi@gmail.com" class="hover:text-brand-light transition-colors duration-300">Email</a>
+                <!-- UPDATE: Changed link to point to #contact section -->
+                <a href="#contact" class="hover:text-brand-light transition-colors duration-300">Contact</a>
             </div>
             
             <p>&copy; 2025 Inzamul Hoque Rafi. All rights reserved.</p>
@@ -246,5 +280,4 @@
 
 </body>
 </html>
-
 
