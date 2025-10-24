@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- This is your page title -->
     <title>Inzamul Hoque Rafi | Tech Enthusiast</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -26,101 +25,111 @@
                             'dark': '#0d9488' 
                         },
                         'dark': {
-                            'bg': '#0f172a',    
-                            'card': '#1e293b',  
-                            'text': '#f1f5f9',   
-                            'secondary': '#94a3b8' 
+                            'bg': '#0f172a',
+                            'card': '#1e293b',
+                            'text': '#f1f5f9',
+                            'secondary': '#94a3b8'
                         }
                     }
                 }
             }
         }
+
+        /* NEW: Styles for the cursor spotlight effect */
+        .spotlight {
+            background: radial-gradient(circle at var(--x) var(--y), rgba(20, 184, 166, 0.1), transparent 30%);
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        body:hover .spotlight {
+            opacity: 1;
+        }
+        
+        /* NEW: Base styles for scroll animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.6, 0.2, 0.4, 1), transform 0.8s cubic-bezier(0.6, 0.2, 0.4, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
     </style>
 </head>
 
-<!-- UPDATE: Changed default text color to white -->
-<body class="bg-black text-white font-sans antialiased">
+<body class="bg-[#0A0A0A] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(30,41,59,0.6),rgba(255,255,255,0))] text-dark-text font-sans antialiased">
+    
+    <div class="spotlight"></div>
 
-    <!-- ===== Header & Navigation Bar ===== -->
-    <header class="sticky top-0 z-50 w-full bg-black/80 backdrop-blur-md border-b border-dark-card">
+    <header class="sticky top-0 z-50 w-full bg-black/50 backdrop-blur-lg border-b border-dark-card/50">
         <nav class="max-w-5xl mx-auto flex items-center justify-between p-6">
             
-            <!-- Your Name -->
             <a href="#home" class="text-2xl font-bold text-white">Inzamul Hoque Rafi</a>
             
             <div class="hidden md:flex items-center space-x-6">
-                <!-- UPDATE: Changed nav link color -->
-                <a href="#about" class="text-white hover:text-brand-light transition-colors duration-300">About</a>
-                <a href="#projects" class="text-white hover:text-brand-light transition-colors duration-300">Projects</a>
-                <a href="#articles" class="text-white hover:text-brand-light transition-colors duration-300">Articles</a>
+                <a href="#about" class="text-dark-secondary hover:text-brand-light transition-colors duration-300">About</a>
+                <a href="#projects" class="text-dark-secondary hover:text-brand-light transition-colors duration-300">Projects</a>
+                <a href="#articles" class="text-dark-secondary hover:text-brand-light transition-colors duration-300">Articles</a>
                 
-                <!-- Contact Button -->
-                <!-- UPDATE: Changed link to point to #contact section -->
                 <a href="#contact" class="px-4 py-2 bg-brand hover:bg-brand-dark text-white rounded-lg font-medium transition-all duration-300 transform hover:scale-105">
                     Contact
                 </a>
             </div>
 
-            <!-- Mobile Menu Links (Simplified) -->
-            <!-- UPDATE: Added 'Articles' to the mobile menu and changed color -->
             <div class="md:hidden flex space-x-4">
-                 <a href="#about" class="text-white hover:text-brand-light transition-colors">About</a>
-                 <a href="#projects" class="text-white hover:text-brand-light transition-colors">Projects</a>
-                 <a href="#articles" class="text-white hover:text-brand-light transition-colors">Articles</a>
+                 <a href="#about" class="text-dark-secondary hover:text-brand-light transition-colors">About</a>
+                 <a href="#projects" class="text-dark-secondary hover:text-brand-light transition-colors">Projects</a>
+                 <a href="#articles" class="text-dark-secondary hover:text-brand-light transition-colors">Articles</a>
             </div>
         </nav>
     </header>
 
-    <!-- ===== Main Content ===== -->
     <main class="max-w-5xl mx-auto p-6">
 
-        <!-- ===== 1. Hero Section (Welcome) ===== -->
-        <section id="home" class="min-h-[70vh] flex flex-col items-center justify-center text-center py-20">
-            <h1 class="text-4xl md:text-6xl font-bold text-white">
-                <!-- Your Welcome Message -->
-                Hi, it's <span class="text-brand-light">Inzamul Hoque Rafi</span>
+        <section id="home" class="min-h-[80vh] flex flex-col items-center justify-center text-center py-20">
+            <h1 class="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-light via-white to-brand-light reveal">
+                Hi, it's <span class="block mt-2">Inzamul Hoque Rafi</span>
             </h1>
-            <!-- UPDATE: Changed text color to white -->
-            <p class="mt-4 text-xl md:text-2xl text-white max-w-2xl">
-                <!-- Your Subtitle -->
-                I'm a tech and research enthusiast. Welcome to my site.
+            <p class="mt-6 text-xl md:text-2xl text-dark-secondary max-w-2xl reveal" style="transition-delay: 200ms;">
+                I'm a tech and research enthusiast, building for the future. Welcome to my digital space.
             </p>
-            <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <div class="mt-10 flex flex-wrap justify-center gap-4 reveal" style="transition-delay: 400ms;">
                 
-                <!-- UPDATE: Added LinkedIn URL -->
                 <a href="https://www.linkedin.com/in/inzamul-hoque-rafi-a84482390" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand-dark text-white rounded-lg font-medium transition-all duration-300 transform hover:scale-105 text-lg">
                     My LinkedIn Profile
                 </a>
                 
-                <!-- UPDATE: Added GitHub URL -->
                 <a href="https://github.com/Inzamul-Hoque-Rafi" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-dark-card hover:bg-slate-600 text-white rounded-lg font-medium transition-all duration-300 transform hover:scale-105 text-lg">
                     View My GitHub
                 </a>
             </div>
         </section>
 
-        <!-- ===== 2. About Me Section ===== -->
         <section id="about" class="py-16 md:py-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-16 reveal">
                 About Me
             </h2>
             
-            <!-- Container for your photo and bio -->
             <div class="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16">
-                
-                <!-- Your Profile Photo -->
-                <!-- UPDATE: Changed src back to 'profile.jpg' as requested -->
                 <img 
                     src="profile.jpg" 
                     alt="Inzamul Hoque Rafi" 
-                    class="w-64 h-64 rounded-full object-cover object-top shadow-xl"
+                    class="w-64 h-64 rounded-full object-cover object-top shadow-xl border-4 border-dark-card reveal"
                     onerror="this.src='https://placehold.co/256x256/1e293b/f1f5f9?text=Rafi';" 
                 >
 
-                <!-- This div holds your bio text -->
-                <!-- UPDATE: Changed text color to white -->
-                <div class="max-w-xl text-lg text-white leading-relaxed space-y-6 text-center md:text-left">
-                    <!-- Your Bio -->
+                <div class="max-w-xl text-lg text-dark-secondary leading-relaxed space-y-6 text-center md:text-left reveal" style="transition-delay: 200ms;">
                     <p>
                         Hello! I'm a first-year engineering student at BUET. My journey in engineering is driven by a deep curiosity for how the world works, which has recently become a passion for electrochemistry and sustainable energy systems.
                     </p>
@@ -131,55 +140,44 @@
             </div>
         </section>
 
-        <!-- ===== 3. Projects Section ===== -->
         <section id="projects" class="py-16 md:py-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">
+             <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12 reveal">
                 My Projects
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 stagger-container">
                 
-                <!-- Project 1 -->
-                <!-- UPDATE: Added hover scale effect and subtle border -->
-                <div class="bg-dark-card p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:border-brand border border-transparent">
+                <div class="bg-dark-card p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl hover:border-brand border border-transparent reveal">
                     <h3 class="text-2xl font-semibold text-white mb-3">Project Title 1</h3>
-                    <!-- UPDATE: Changed text color to white -->
-                    <p class="text-white mb-4">
+                    <p class="text-dark-secondary mb-4">
                         A short description of your project. What problem did it solve? What technology did you use?
                     </p>
-                    <!-- Link to your project -->
-                    <a href="#" class="font-medium text-brand-light hover:text-brand-dark transition-colors">
-                        View Project on GitHub &rarr;
+                    <a href="#" class="font-medium text-brand-light hover:text-brand-dark transition-colors inline-flex items-center group">
+                        View Project on GitHub 
+                        <span class="ml-1 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
                     </a>
                 </div>
 
-                <!-- Project 2 -->
-                <!-- UPDATE: Added hover scale effect and subtle border -->
-                <div class="bg-dark-card p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:border-brand border border-transparent">
+                <div class="bg-dark-card p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl hover:border-brand border border-transparent reveal">
                     <h3 class="text-2xl font-semibold text-white mb-3">Project Title 2</h3>
-                    <!-- UPDATE: Changed text color to white -->
-                    <p class="text-white mb-4">
+                    <p class="text-dark-secondary mb-4">
                         This is a great place to link to a complex problem set you solved, or any personal website/app you build.
-                    </D>
-                    <!-- Link to your project -->
-                    <a href="#" class="font-medium text-brand-light hover:text-brand-dark transition-colors">
-                        View Project on GitHub &rarr;
+                    </p>
+                    <a href="#" class="font-medium text-brand-light hover:text-brand-dark transition-colors inline-flex items-center group">
+                        View Project on GitHub 
+                        <span class="ml-1 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- ===== 4. Articles Section ===== -->
         <section id="articles" class="py-16 md:py-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">
+             <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12 reveal">
                 My Articles &amp; Writing
             </h2>
-            <div class="max-w-3xl mx-auto space-y-8">
+            <div class="max-w-3xl mx-auto space-y-8 stagger-container">
 
-                <!-- Article 1 -->
-                <!-- UPDATE: Added hover scale effect and subtle border -->
-                <div class="bg-dark-card p-6 rounded-xl shadow-lg flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:border-brand border border-transparent">
+                <a href="#" class="block bg-dark-card p-6 rounded-xl shadow-lg flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 transition-all duration-300 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl hover:border-brand border border-transparent reveal">
                     <div class="flex-shrink-0">
-                        <!-- Icon -->
                         <div class="w-16 h-16 bg-brand-dark rounded-lg flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-light"><path d="M2 17h20"></path><path d="M6 17v-7a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v7"></path><path d="M8 7v-2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
                         </div>
@@ -188,22 +186,17 @@
                         <h3 class="text-2xl font-semibold text-white mb-2 text-center sm:text-left">
                             Overview: The Future of Battery Technology
                         </h3>
-                        <!-- UPDATE: Changed text color to white -->
-                        <p class="text-white mb-3 text-center sm:text-left">
+                        <p class="text-dark-secondary mb-3 text-center sm:text-left">
                             A high-level overview of where battery technology is today and the exciting challenges in fields like solid-state and sodium-ion.
                         </p>
-                        <!-- Link to your article -->
-                        <a href="#" class="font-medium text-brand-light hover:text-brand-dark transition-colors block text-center sm:text-left">
-                            Read Article &rarr;
-                        </a>
+                         <p class="font-medium text-brand-light group-hover:text-brand-dark transition-colors block text-center sm:text-left">
+                            Read Article <span class="ml-1 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                        </p>
                     </div>
-                </div>
+                </a>
 
-                <!-- Article 2 -->
-                <!-- UPDATE: Added hover scale effect and subtle border -->
-                <div class="bg-dark-card p-6 rounded-xl shadow-lg flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:border-brand border border-transparent">
+                <a href="#" class="block bg-dark-card p-6 rounded-xl shadow-lg flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 transition-all duration-300 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl hover:border-brand border border-transparent reveal">
                      <div class="flex-shrink-0">
-                        <!-- Icon -->
                         <div class="w-16 h-16 bg-brand-dark rounded-lg flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-light"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path></svg>
                         </div>
@@ -212,109 +205,141 @@
                         <h3 class="text-2xl font-semibold text-white mb-2 text-center sm:text-left">
                             My First-Year Engineering Learnings
                         </h3>
-                        <!-- UPDATE: Changed text color to white -->
-                        <p class="text-white mb-3 text-center sm:text-left">
+                        <p class="text-dark-secondary mb-3 text-center sm:text-left">
                             A place to document what you're learning in your classes, what you find interesting, and your goals.
                         </p>
-                        <!-- Link to your article -->
-                        <a href="#" class="font-medium text-brand-light hover:text-brand-dark transition-colors block text-center sm:text-left">
-                            Read Article &rarr;
-                        </a>
+                        <p class="font-medium text-brand-light group-hover:text-brand-dark transition-colors block text-center sm:text-left">
+                           Read Article <span class="ml-1 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                        </p>
                     </div>
-                </div>
+                </a>
 
             </div>
         </section>
 
-        <!-- ===== 5. Contact Section (NEW) ===== -->
-        <!-- UPDATE: Replaced form with a static info section -->
         <section id="contact" class="py-16 md:py-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">
+             <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12 reveal">
                 Get In Touch
             </h2>
-            <div class="max-w-xl mx-auto space-y-6">
+            <div class="max-w-xl mx-auto space-y-6 stagger-container">
 
-                <!-- Email -->
-                <a href="mailto:inzamulhoquerafi@gmail.com" class="bg-dark-card p-6 rounded-xl shadow-lg flex items-center space-x-6 transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:border-brand border border-transparent">
+                <a href="mailto:inzamulhoquerafi@gmail.com" class="bg-dark-card p-6 rounded-xl shadow-lg flex items-center space-x-6 transition-all duration-300 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl hover:border-brand border border-transparent reveal">
                     <div class="flex-shrink-0">
-                        <!-- Icon -->
                         <div class="w-16 h-16 bg-brand-dark rounded-lg flex items-center justify-center">
-                            <!-- Email SVG Icon -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-light"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                         </div>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold text-white mb-1">Email</h3>
-                        <p class="text-white hover:text-brand-light transition-colors">inzamulhoquerafi@gmail.com</p>
+                        <p class="text-dark-secondary group-hover:text-brand-light transition-colors">inzamulhoquerafi@gmail.com</p>
                     </div>
                 </a>
 
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/inzamul-hoque-rafi-a84482390" target="_blank" rel="noopener noreferrer" class="bg-dark-card p-6 rounded-xl shadow-lg flex items-center space-x-6 transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:border-brand border border-transparent">
+                <a href="https://www.linkedin.com/in/inzamul-hoque-rafi-a84482390" target="_blank" rel="noopener noreferrer" class="bg-dark-card p-6 rounded-xl shadow-lg flex items-center space-x-6 transition-all duration-300 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl hover:border-brand border border-transparent reveal">
                     <div class="flex-shrink-0">
-                        <!-- Icon -->
                         <div class="w-16 h-16 bg-brand-dark rounded-lg flex items-center justify-center">
-                            <!-- LinkedIn SVG Icon -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-light"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                         </div>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold text-white mb-1">LinkedIn</h3>
-                        <p class="text-white hover:text-brand-light transition-colors">Inzamul Hoque Rafi</p>
+                        <p class="text-dark-secondary group-hover:text-brand-light transition-colors">Inzamul Hoque Rafi</p>
                     </div>
                 </a>
-
-                <!-- GitHub -->
-                <a href="https://github.com/Inzamul-Hoque-Rafi" target="_blank" rel="noopener noreferrer" class="bg-dark-card p-6 rounded-xl shadow-lg flex items-center space-x-6 transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:border-brand border border-transparent">
-                    <div class="flex-shrink-0">
-                        <!-- Icon -->
-                        <div class="w-16 h-16 bg-brand-dark rounded-lg flex items-center justify-center">
-                            <!-- GitHub SVG Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-light"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></D></svg>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-white mb-1">GitHub</h3>
-                        <p class="text-white hover:text-brand-light transition-colors">Inzamul-Hoque-Rafi</p>
-                    </div>
-                </a>
-
-                <!-- Facebook -->
-                <a href="https://www.facebook.com/inzamul.hoque.849577" target="_blank" rel="noopener noreferrer" class="bg-dark-card p-6 rounded-xl shadow-lg flex items-center space-x-6 transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:border-brand border border-transparent">
-                    <div class="flex-shrink-0">
-                        <!-- Icon -->
-                        <div class="w-16 h-16 bg-brand-dark rounded-lg flex items-center justify-center">
-                            <!-- Facebook SVG Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-light"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-white mb-1">Facebook</h3>
-                        <p class="text-white hover:text-brand-light transition-colors">Inzamul Hoque (Rafi)</p>
-                    </div>
-                </a>
-
+                
+                <a href="https://github.com/Inzamul-Hoque-Rafi" target="_blank" rel="noopener noreferrer" class="bg-dark-card p-6 rounded-xl shadow-lg flex items-center space-x-6 transition-all duration-300 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl hover:border-brand border border-transparent reveal">
+                     <div class="flex-shrink-0">
+                         <div class="w-16 h-16 bg-brand-dark rounded-lg flex items-center justify-center">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-light"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                         </div>
+                     </div>
+                     <div>
+                         <h3 class="text-xl font-semibold text-white mb-1">GitHub</h3>
+                         <p class="text-dark-secondary group-hover:text-brand-light transition-colors">Inzamul-Hoque-Rafi</p>
+                     </div>
+                 </a>
+                 
+                <a href="https://www.facebook.com/inzamul.hoque.849577" target="_blank" rel="noopener noreferrer" class="bg-dark-card p-6 rounded-xl shadow-lg flex items-center space-x-6 transition-all duration-300 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl hover:border-brand border border-transparent reveal">
+                     <div class="flex-shrink-0">
+                         <div class="w-16 h-16 bg-brand-dark rounded-lg flex items-center justify-center">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-light"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                         </div>
+                     </div>
+                     <div>
+                         <h3 class="text-xl font-semibold text-white mb-1">Facebook</h3>
+                         <p class="text-dark-secondary group-hover:text-brand-light transition-colors">Inzamul Hoque (Rafi)</p>
+                     </div>
+                 </a>
             </div>
         </section>
 
     </main>
 
-    <!-- ===== Footer ===== -->
-    <footer class="border-t border-dark-card mt-16">
-        <!-- UPDATE: Changed text color to white -->
-        <div class="max-w-5xl mx-auto p-6 text-center text-white">
+    <footer class="border-t border-dark-card/30 mt-16">
+        <div class="max-w-5xl mx-auto p-6 text-center text-dark-secondary">
             <div class="flex flex-wrap justify-center items-center gap-6 mb-4">
-                 <!-- UPDATE: Added real links + Facebook -->
-                <a href="https://www.linkedin.com/in/inzamul-hoque-rafi-a84482390" target="_blank" rel="noopener noreferrer" class="hover:text-brand-light transition-colors duration-300">LinkedIn</a>
-                <a href="https://github.com/Inzamul-Hoque-Rafi" target="_blank" rel="noopener noreferrer" class="hover:text-brand-light transition-colors duration-300">GitHub</a>
-                <a href="https://www.facebook.com/inzamul.hoque.849577" target="_blank" rel="noopener noreferrer" class="hover:text-brand-light transition-colors duration-300">Facebook</a>
-                <a href="mailto:inzamulhoquerafi@gmail.com" class="hover:text-brand-light transition-colors duration-300">Email</a>
+               <a href="https://www.linkedin.com/in/inzamul-hoque-rafi-a84482390" target="_blank" rel="noopener noreferrer" class="hover:text-brand-light transition-colors duration-300">LinkedIn</a>
+               <a href="https://github.com/Inzamul-Hoque-Rafi" target="_blank" rel="noopener noreferrer" class="hover:text-brand-light transition-colors duration-300">GitHub</a>
+               <a href="https://www.facebook.com/inzamul.hoque.849577" target="_blank" rel="noopener noreferrer" class="hover:text-brand-light transition-colors duration-300">Facebook</a>
+               <a href="mailto:inzamulhoquerafi@gmail.com" class="hover:text-brand-light transition-colors duration-300">Email</a>
             </div>
             
             <p>&copy; 2025 Inzamul Hoque Rafi. All rights reserved.</p>
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // --- Cursor Spotlight Effect ---
+            const spotlight = document.querySelector('.spotlight');
+            if (spotlight) {
+                window.addEventListener('mousemove', (e) => {
+                    spotlight.style.setProperty('--x', e.clientX + 'px');
+                    spotlight.style.setProperty('--y', e.clientY + 'px');
+                });
+            }
+
+            // --- Scroll Animation ---
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Optional: unobserve after revealing to save resources
+                        // observer.unobserve(entry.target); 
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            revealElements.forEach(el => {
+                observer.observe(el);
+            });
+
+            // --- Staggered Scroll Animation ---
+            const staggerContainers = document.querySelectorAll('.stagger-container');
+            
+            const staggerObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const children = entry.target.querySelectorAll('.reveal');
+                        children.forEach((child, index) => {
+                            child.style.transitionDelay = `${index * 150}ms`;
+                        });
+                        // We only want to run this once per container
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            staggerContainers.forEach(container => {
+                staggerObserver.observe(container);
+            });
+        });
+    </script>
 </body>
 </html>
-
