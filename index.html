@@ -227,36 +227,73 @@
         </section>
 
         <!-- ===== 5. Contact Section (NEW) ===== -->
+        <!-- UPDATE: Replaced form with a static info section -->
         <section id="contact" class="py-16 md:py-24">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">
                 Get In Touch
             </h2>
-            <div class="max-w-xl mx-auto p-8 bg-dark-card rounded-xl shadow-lg">
-                <form action="https://formsubmit.co/inzamulhoquerafi@gmail.com" method="POST">
-                    <div class="space-y-6">
-                        <!-- Name -->
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-white mb-2">Your Name</label>
-                            <input type="text" name="name" id="name" required class="w-full bg-slate-800 border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-brand-light border">
-                        </div>
-                        <!-- Email -->
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-white mb-2">Your Email</label>
-                            <input type="email" name="email" id="email" required class="w-full bg-slate-800 border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-brand-light border">
-                        </div>
-                        <!-- Message -->
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-white mb-2">Message</label>
-                            <textarea name="message" id="message" rows="5" required class="w-full bg-slate-800 border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-brand-light border"></textarea>
-                        </div>
-                        <!-- Submit Button -->
-                        <div>
-                            <button type="submit" class="w-full px-6 py-3 bg-brand hover:bg-brand-dark text-white rounded-lg font-medium transition-all duration-300 transform hover:scale-105 text-lg">
-                                Send Message
-                            </button>
+            <div class="max-w-xl mx-auto space-y-6">
+
+                <!-- Email -->
+                <a href="mailto:inzamulhoquerafi@gmail.com" class="bg-dark-card p-6 rounded-xl shadow-lg flex items-center space-x-6 transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:border-brand border border-transparent">
+                    <div class="flex-shrink-0">
+                        <!-- Icon -->
+                        <div class="w-16 h-16 bg-brand-dark rounded-lg flex items-center justify-center">
+                            <!-- Email SVG Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-light"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                         </div>
                     </div>
-                </form>
+                    <div>
+                        <h3 class="text-xl font-semibold text-white mb-1">Email</h3>
+                        <p class="text-white hover:text-brand-light transition-colors">inzamulhoquerafi@gmail.com</p>
+                    </div>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/inzamul-hoque-rafi-a84482390" target="_blank" rel="noopener noreferrer" class="bg-dark-card p-6 rounded-xl shadow-lg flex items-center space-x-6 transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:border-brand border border-transparent">
+                    <div class="flex-shrink-0">
+                        <!-- Icon -->
+                        <div class="w-16 h-16 bg-brand-dark rounded-lg flex items-center justify-center">
+                            <!-- LinkedIn SVG Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-light"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-white mb-1">LinkedIn</h3>
+                        <p class="text-white hover:text-brand-light transition-colors">Inzamul Hoque Rafi</p>
+                    </div>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/Inzamul-Hoque-Rafi" target="_blank" rel="noopener noreferrer" class="bg-dark-card p-6 rounded-xl shadow-lg flex items-center space-x-6 transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:border-brand border border-transparent">
+                    <div class="flex-shrink-0">
+                        <!-- Icon -->
+                        <div class="w-16 h-16 bg-brand-dark rounded-lg flex items-center justify-center">
+                            <!-- GitHub SVG Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-light"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></D></svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-white mb-1">GitHub</h3>
+                        <p class="text-white hover:text-brand-light transition-colors">Inzamul-Hoque-Rafi</p>
+                    </div>
+                </a>
+
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/inzamul.hoque.849577" target="_blank" rel="noopener noreferrer" class="bg-dark-card p-6 rounded-xl shadow-lg flex items-center space-x-6 transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:border-brand border border-transparent">
+                    <div class="flex-shrink-0">
+                        <!-- Icon -->
+                        <div class="w-16 h-16 bg-brand-dark rounded-lg flex items-center justify-center">
+                            <!-- Facebook SVG Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-light"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-white mb-1">Facebook</h3>
+                        <p class="text-white hover:text-brand-light transition-colors">Inzamul Hoque (Rafi)</p>
+                    </div>
+                </a>
+
             </div>
         </section>
 
@@ -266,12 +303,12 @@
     <footer class="border-t border-dark-card mt-16">
         <!-- UPDATE: Changed text color to white -->
         <div class="max-w-5xl mx-auto p-6 text-center text-white">
-            <div class="flex justify-center space-x-6 mb-4">
-                 <!-- UPDATE: Added real links -->
+            <div class="flex flex-wrap justify-center items-center gap-6 mb-4">
+                 <!-- UPDATE: Added real links + Facebook -->
                 <a href="https://www.linkedin.com/in/inzamul-hoque-rafi-a84482390" target="_blank" rel="noopener noreferrer" class="hover:text-brand-light transition-colors duration-300">LinkedIn</a>
                 <a href="https://github.com/Inzamul-Hoque-Rafi" target="_blank" rel="noopener noreferrer" class="hover:text-brand-light transition-colors duration-300">GitHub</a>
-                <!-- UPDATE: Changed link to point to #contact section -->
-                <a href="#contact" class="hover:text-brand-light transition-colors duration-300">Contact</a>
+                <a href="https://www.facebook.com/inzamul.hoque.849577" target="_blank" rel="noopener noreferrer" class="hover:text-brand-light transition-colors duration-300">Facebook</a>
+                <a href="mailto:inzamulhoquerafi@gmail.com" class="hover:text-brand-light transition-colors duration-300">Email</a>
             </div>
             
             <p>&copy; 2025 Inzamul Hoque Rafi. All rights reserved.</p>
