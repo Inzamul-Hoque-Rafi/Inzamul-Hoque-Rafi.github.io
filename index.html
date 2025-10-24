@@ -1,40 +1,13 @@
-You've made an excellent point. The most important part of any design is that it must be easy to read and use. Sometimes, cool effects can get in the way of clarity. My apologies for that\!
-
-The "hard to see" issue likely comes from two places:
-
-1.  **The Cursor Spotlight:** It was probably a bit too bright, reducing the contrast between the text and the background as you moved your mouse.
-2.  **Text Contrast:** The gray color for the paragraphs (`text-dark-secondary`) might have been too dark against the new background.
-
-Let's fix this. We'll make adjustments to prioritize readability while keeping the professional, animated feel.
-
-### Summary of Changes:
-
-1.  **Much Subtler Spotlight:** I've significantly toned down the cursor spotlight. It's now a much fainter, softer glow that adds atmosphere without interfering with the text.
-2.  **Brighter Paragraph Text:** I've replaced the darker gray text with a brighter `text-slate-300`, which is much easier to read against the dark background.
-3.  **High-Contrast Headline:** We'll go back to a solid, bright color for the main headline in the hero section. This makes it instantly pop and is far more legible than the gradient text.
-
-Here is the updated code. It should be the perfect balance of "interesting" and "easy to read."
-
------
-
-### The New, More Readable Code
-
-Just replace your entire HTML file with this version. I've added \`\` comments to show you exactly what changed.
-
-```html
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Inzamul Hoque Rafi | Tech Enthusiast</title>
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-
     <style>
         tailwind.config = {
             theme: {
@@ -43,325 +16,156 @@ Just replace your entire HTML file with this version. I've added \`\` comments t
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
+                        /* NEW: Swapped to a violet accent and slate background */
                         'brand': {
-                            'light': '#2dd4bf', 
-                            'DEFAULT': '#14b8a6',
-                            'dark': '#0d9488' 
+                            'light': '#a78bfa',
+                            'DEFAULT': '#8b5cf6',
+                            'dark': '#7c3aed'
                         },
-                        'dark': {
-                            'bg': '#0f172a',
-                            'card': '#1e293b',
-                            'text': '#f1f5f9',
-                            'secondary': '#94a3b8' /* This is slate-400 */
+                        'slate': {
+                            '950': '#020617', /* Main BG */
+                            '900': '#0f172a', /* Card BG */
+                            '800': '#1e293b', /* Border Color */
+                            '400': '#94a3b8', /* Secondary Text */
+                            '200': '#e2e8f0', /* Main Text */
                         }
                     }
                 }
             }
         }
 
-        /* UPDATE: Made the spotlight much fainter and softer for better readability */
-        .spotlight {
-            background: radial-gradient(circle at var(--x) var(--y), rgba(20, 184, 166, 0.05), transparent 40%);
-            pointer-events: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 9999;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
+        /* NEW: Styles for the glowing border effect on grid items */
+        .bento-item {
+            position: relative;
+            background-color: #0f172a; /* slate-900 */
+            border: 1px solid #1e293b; /* slate-800 */
+            transition: background-color 0.3s ease, border-color 0.3s ease;
         }
 
-        body:hover .spotlight {
-            opacity: 1;
+        .bento-item:hover {
+            border-color: #8b5cf6; /* brand-DEFAULT */
+            background-color: #131c31;
         }
-        
+
         /* Base styles for scroll animations (unchanged) */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.8s cubic-bezier(0.6, 0.2, 0.4, 1), transform 0.8s cubic-bezier(0.6, 0.2, 0.4, 1);
         }
-
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
     </style>
 </head>
+<body class="bg-slate-950 text-slate-200 font-sans antialiased">
 
-<body class="bg-[#0A0A0A] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(30,41,59,0.6),rgba(255,255,255,0))] text-dark-text font-sans antialiased">
-    
-    <div class="spotlight"></div>
-
-    <header class="sticky top-0 z-50 w-full bg-black/50 backdrop-blur-lg border-b border-dark-card/50">
+    <header class="sticky top-0 z-50 w-full bg-slate-950/80 backdrop-blur-lg border-b border-slate-800">
         <nav class="max-w-5xl mx-auto flex items-center justify-between p-6">
-            
-            <a href="#home" class="text-2xl font-bold text-white">Inzamul Hoque Rafi</a>
-            
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="#about" class="text-slate-300 hover:text-brand-light transition-colors duration-300">About</a>
-                <a href="#projects" class="text-slate-300 hover:text-brand-light transition-colors duration-300">Projects</a>
-                <a href="#articles" class="text-slate-300 hover:text-brand-light transition-colors duration-300">Articles</a>
-                
-                <a href="#contact" class="px-4 py-2 bg-brand hover:bg-brand-dark text-white rounded-lg font-medium transition-all duration-300 transform hover:scale-105">
-                    Contact
-                </a>
-            </div>
-
-            <div class="md:hidden flex space-x-4">
-                 <a href="#about" class="text-slate-300 hover:text-brand-light transition-colors">About</a>
-                 <a href="#projects" class="text-slate-300 hover:text-brand-light transition-colors">Projects</a>
-                 <a href="#articles" class="text-slate-300 hover:text-brand-light transition-colors">Articles</a>
-            </div>
+            <a href="#" class="text-2xl font-bold text-white">Inzamul Hoque Rafi</a>
+            <a href="mailto:inzamulhoquerafi@gmail.com" class="px-4 py-2 bg-brand hover:bg-brand-dark text-white rounded-lg font-medium transition-colors duration-300">
+                Get in Touch
+            </a>
         </nav>
     </header>
 
-    <main class="max-w-5xl mx-auto p-6">
-
-        <section id="home" class="min-h-[80vh] flex flex-col items-center justify-center text-center py-20">
-            <h1 class="text-5xl md:text-7xl font-bold text-white reveal">
-                Hi, it's <span class="text-brand-light">Inzamul Hoque Rafi</span>
-            </h1>
-            <p class="mt-6 text-xl md:text-2xl text-slate-300 max-w-2xl reveal" style="transition-delay: 200ms;">
-                I'm a tech and research enthusiast, building for the future. Welcome to my digital space.
+    <main class="max-w-5xl mx-auto p-6 py-16 md:py-24">
+        
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-white reveal">Engineering Student & Tech Enthusiast</h1>
+            <p class="mt-4 text-lg text-slate-400 max-w-2xl mx-auto reveal" style="transition-delay: 150ms;">
+                Exploring the frontiers of electrochemistry, sustainable energy, and technology.
             </p>
-            <div class="mt-10 flex flex-wrap justify-center gap-4 reveal" style="transition-delay: 400ms;">
-                
-                <a href="https://www.linkedin.com/in/inzamul-hoque-rafi-a84482390" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand-dark text-white rounded-lg font-medium transition-all duration-300 transform hover:scale-105 text-lg">
-                    My LinkedIn Profile
-                </a>
-                
-                <a href="https://github.com/Inzamul-Hoque-Rafi" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-dark-card hover:bg-slate-600 text-white rounded-lg font-medium transition-all duration-300 transform hover:scale-105 text-lg">
-                    View My GitHub
-                </a>
-            </div>
-        </section>
+        </div>
 
-        <section id="about" class="py-16 md:py-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-16 reveal">
-                About Me
-            </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-container">
+
+            <div class="bento-item md:col-span-2 md:row-span-2 p-8 rounded-2xl flex flex-col justify-between reveal">
+                <div>
+                    <h2 class="text-2xl font-bold text-white mb-4">About Me</h2>
+                    <p class="text-slate-400 leading-relaxed mb-4">
+                        I'm a first-year engineering student at BUET with a strong passion for solving complex problems. My current focus is on electrochemistry and sustainable energy systems, as I believe this is where I can make a significant impact.
+                    </p>
+                    <p class="text-slate-400 leading-relaxed">
+                        Beyond academics, I am dedicated to bodybuilding and fitness, which teaches me discipline and resilience. Welcome to my corner of the internet.
+                    </p>
+                </div>
+                <img src="profile.jpg" alt="Inzamul Hoque Rafi" class="w-24 h-24 rounded-full object-cover mt-8 self-start border-2 border-slate-800" onerror="this.src='https://placehold.co/96x96/1e293b/e2e8f0?text=Rafi';">
+            </div>
+
+            <a href="https://github.com/Inzamul-Hoque-Rafi" target="_blank" rel="noopener noreferrer" class="bento-item p-6 rounded-2xl flex flex-col justify-between group reveal">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400 mb-4"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    <h3 class="text-xl font-semibold text-white">My GitHub</h3>
+                    <p class="text-slate-400 mt-1">Code, projects, and experiments.</p>
+                </div>
+                <p class="mt-4 font-medium text-brand-light transition-transform duration-300 group-hover:translate-x-1">View Profile &rarr;</p>
+            </a>
+
+            <a href="https://www.linkedin.com/in/inzamul-hoque-rafi-a84482390" target="_blank" rel="noopener noreferrer" class="bento-item p-6 rounded-2xl flex flex-col justify-between group reveal">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400 mb-4"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    <h3 class="text-xl font-semibold text-white">My LinkedIn</h3>
+                    <p class="text-slate-400 mt-1">Professional network and updates.</p>
+                </div>
+                <p class="mt-4 font-medium text-brand-light transition-transform duration-300 group-hover:translate-x-1">Connect with Me &rarr;</p>
+            </a>
+
+            <a href="#" class="bento-item md:col-span-3 p-8 rounded-2xl flex items-center justify-between group reveal">
+                <div class="flex items-center gap-6">
+                    <div class="hidden sm:block w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-light"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white">Articles & Writing</h3>
+                        <p class="text-slate-400 mt-1">Thoughts on technology, engineering, and personal growth.</p>
+                    </div>
+                </div>
+                <p class="font-medium text-brand-light transition-transform duration-300 group-hover:translate-x-1 hidden md:block">Read More &rarr;</p>
+            </a>
             
-            <div class="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16">
-                <img 
-                    src="profile.jpg" 
-                    alt="Inzamul Hoque Rafi" 
-                    class="w-64 h-64 rounded-full object-cover object-top shadow-xl border-4 border-dark-card reveal"
-                    onerror="this.src='https://placehold.co/256x256/1e293b/f1f5f9?text=Rafi';" 
-                >
-
-                <div class="max-w-xl text-lg text-slate-300 leading-relaxed space-y-6 text-center md:text-left reveal" style="transition-delay: 200ms;">
-                    <p>
-                        Hello! I'm a first-year engineering student at BUET. My journey in engineering is driven by a deep curiosity for how the world works, which has recently become a passion for electrochemistry and sustainable energy systems.
-                    </p>
-                    <p>
-                        I believe that developing more efficient and affordable power sources is one of the biggest challenges our generation faces, and it's a problem I want to help solve. When I'm not studying physics or math, I enjoy bodybuilding and exploring new topics in technology.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="py-16 md:py-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12 reveal">
-                My Projects
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 stagger-container">
-                
-                <div class="bg-dark-card p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl hover:border-brand border border-transparent reveal">
-                    <h3 class="text-2xl font-semibold text-white mb-3">Project Title 1</h3>
-                    <p class="text-slate-300 mb-4">
-                        A short description of your project. What problem did it solve? What technology did you use?
-                    </p>
-                    <a href="#" class="font-medium text-brand-light hover:text-brand-dark transition-colors inline-flex items-center group">
-                        View Project on GitHub 
-                        <span class="ml-1 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-                    </a>
-                </div>
-
-                <div class="bg-dark-card p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl hover:border-brand border border-transparent reveal">
-                    <h3 class="text-2xl font-semibold text-white mb-3">Project Title 2</h3>
-                    <p class="text-slate-300 mb-4">
-                        This is a great place to link to a complex problem set you solved, or any personal website/app you build.
-                    </p>
-                    <a href="#" class="font-medium text-brand-light hover:text-brand-dark transition-colors inline-flex items-center group">
-                        View Project on GitHub 
-                        <span class="ml-1 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="articles" class="py-16 md:py-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12 reveal">
-                My Articles &amp; Writing
-            </h2>
-            <div class="max-w-3xl mx-auto space-y-8 stagger-container">
-
-                <a href="#" class="block bg-dark-card p-6 rounded-xl shadow-lg flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 transition-all duration-300 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl hover:border-brand border border-transparent reveal group">
-                    <div class="flex-shrink-0">
-                        <div class="w-16 h-16 bg-brand-dark rounded-lg flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-light"><path d="M2 17h20"></path><path d="M6 17v-7a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v7"></path><path d="M8 7v-2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-semibold text-white mb-2 text-center sm:text-left">
-                            Overview: The Future of Battery Technology
-                        </h3>
-                        <p class="text-slate-300 mb-3 text-center sm:text-left">
-                            A high-level overview of where battery technology is today and the exciting challenges in fields like solid-state and sodium-ion.
-                        </p>
-                         <p class="font-medium text-brand-light group-hover:text-brand-dark transition-colors block text-center sm:text-left">
-                            Read Article <span class="ml-1 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-                        </p>
-                    </div>
-                </a>
-
-                <a href="#" class="block bg-dark-card p-6 rounded-xl shadow-lg flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 transition-all duration-300 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl hover:border-brand border border-transparent reveal group">
-                     <div class="flex-shrink-0">
-                        <div class="w-16 h-16 bg-brand-dark rounded-lg flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-light"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path></svg>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-semibold text-white mb-2 text-center sm:text-left">
-                            My First-Year Engineering Learnings
-                        </h3>
-                        <p class="text-slate-300 mb-3 text-center sm:text-left">
-                            A place to document what you're learning in your classes, what you find interesting, and your goals.
-                        </p>
-                        <p class="font-medium text-brand-light group-hover:text-brand-dark transition-colors block text-center sm:text-left">
-                           Read Article <span class="ml-1 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
-                        </p>
-                    </div>
-                </a>
-
-            </div>
-        </section>
-
-        <section id="contact" class="py-16 md:py-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12 reveal">
-                Get In Touch
-            </h2>
-            <div class="max-w-xl mx-auto space-y-6 stagger-container">
-
-                <a href="mailto:inzamulhoquerafi@gmail.com" class="bg-dark-card p-6 rounded-xl shadow-lg flex items-center space-x-6 transition-all duration-300 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl hover:border-brand border border-transparent reveal group">
-                    <div class="flex-shrink-0">
-                        <div class="w-16 h-16 bg-brand-dark rounded-lg flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-light"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-white mb-1">Email</h3>
-                        <p class="text-slate-300 group-hover:text-brand-light transition-colors">inzamulhoquerafi@gmail.com</p>
-                    </div>
-                </a>
-
-                <a href="https://www.linkedin.com/in/inzamul-hoque-rafi-a84482390" target="_blank" rel="noopener noreferrer" class="bg-dark-card p-6 rounded-xl shadow-lg flex items-center space-x-6 transition-all duration-300 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl hover:border-brand border border-transparent reveal group">
-                    <div class="flex-shrink-0">
-                        <div class="w-16 h-16 bg-brand-dark rounded-lg flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-light"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-white mb-1">LinkedIn</h3>
-                        <p class="text-slate-300 group-hover:text-brand-light transition-colors">Inzamul Hoque Rafi</p>
-                    </div>
-                </a>
-                
-                 <a href="https://github.com/Inzamul-Hoque-Rafi" target="_blank" rel="noopener noreferrer" class="bg-dark-card p-6 rounded-xl shadow-lg flex items-center space-x-6 transition-all duration-300 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl hover:border-brand border border-transparent reveal group">
-                     <div class="flex-shrink-0">
-                         <div class="w-16 h-16 bg-brand-dark rounded-lg flex items-center justify-center">
-                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-light"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                         </div>
-                     </div>
-                     <div>
-                         <h3 class="text-xl font-semibold text-white mb-1">GitHub</h3>
-                         <p class="text-slate-300 group-hover:text-brand-light transition-colors">Inzamul-Hoque-Rafi</p>
-                     </div>
-                 </a>
-                 
-                <a href="https://www.facebook.com/inzamul.hoque.849577" target="_blank" rel="noopener noreferrer" class="bg-dark-card p-6 rounded-xl shadow-lg flex items-center space-x-6 transition-all duration-300 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl hover:border-brand border border-transparent reveal group">
-                     <div class="flex-shrink-0">
-                         <div class="w-16 h-16 bg-brand-dark rounded-lg flex items-center justify-center">
-                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-light"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                         </div>
-                     </div>
-                     <div>
-                         <h3 class="text-xl font-semibold text-white mb-1">Facebook</h3>
-                         <p class="text-slate-300 group-hover:text-brand-light transition-colors">Inzamul Hoque (Rafi)</p>
-                     </div>
-                 </a>
-            </div>
-        </section>
-
+        </div>
     </main>
 
-    <footer class="border-t border-dark-card/30 mt-16">
-        <div class="max-w-5xl mx-auto p-6 text-center text-slate-300">
+    <footer class="border-t border-slate-800 mt-16">
+        <div class="max-w-5xl mx-auto p-6 text-center text-slate-400">
             <div class="flex flex-wrap justify-center items-center gap-6 mb-4">
-               <a href="https://www.linkedin.com/in/inzamul-hoque-rafi-a84482390" target="_blank" rel="noopener noreferrer" class="hover:text-brand-light transition-colors duration-300">LinkedIn</a>
-               <a href="https://github.com/Inzamul-Hoque-Rafi" target="_blank" rel="noopener noreferrer" class="hover:text-brand-light transition-colors duration-300">GitHub</a>
-               <a href="https://www.facebook.com/inzamul.hoque.849577" target="_blank" rel="noopener noreferrer" class="hover:text-brand-light transition-colors duration-300">Facebook</a>
-               <a href="mailto:inzamulhoquerafi@gmail.com" class="hover:text-brand-light transition-colors duration-300">Email</a>
+                <a href="https://www.linkedin.com/in/inzamul-hoque-rafi-a84482390" target="_blank" rel="noopener noreferrer" class="hover:text-brand-light transition-colors">LinkedIn</a>
+                <a href="https://github.com/Inzamul-Hoque-Rafi" target="_blank" rel="noopener noreferrer" class="hover:text-brand-light transition-colors">GitHub</a>
+                <a href="https://www.facebook.com/inzamul.hoque.849577" target="_blank" rel="noopener noreferrer" class="hover:text-brand-light transition-colors">Facebook</a>
+                <a href="mailto:inzamulhoquerafi@gmail.com" class="hover:text-brand-light transition-colors">Email</a>
             </div>
-            
             <p>&copy; 2025 Inzamul Hoque Rafi. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            // --- Cursor Spotlight Effect ---
-            const spotlight = document.querySelector('.spotlight');
-            if (spotlight) {
-                window.addEventListener('mousemove', (e) => {
-                    spotlight.style.setProperty('--x', e.clientX + 'px');
-                    spotlight.style.setProperty('--y', e.clientY + 'px');
-                });
-            }
-
-            // --- Scroll Animation ---
+        document.addEventListener('DOMContentLoaded', () => {
             const revealElements = document.querySelectorAll('.reveal');
-            
-            const observer = new IntersectionObserver((entries, observer) => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
                     }
                 });
-            }, {
-                threshold: 0.1 
-            });
+            }, { threshold: 0.1 });
+            revealElements.forEach(el => observer.observe(el));
 
-            revealElements.forEach(el => {
-                observer.observe(el);
-            });
-
-            // --- Staggered Scroll Animation ---
             const staggerContainers = document.querySelectorAll('.stagger-container');
-            
             const staggerObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const children = entry.target.querySelectorAll('.reveal');
                         children.forEach((child, index) => {
-                            child.style.transitionDelay = `${index * 150}ms`;
+                            child.style.transitionDelay = `${index * 100}ms`;
                         });
                         observer.unobserve(entry.target);
                     }
                 });
-            }, {
-                threshold: 0.1
-            });
-            
-            staggerContainers.forEach(container => {
-                staggerObserver.observe(container);
-            });
+            }, { threshold: 0.1 });
+            staggerContainers.forEach(container => staggerObserver.observe(container));
         });
     </script>
 </body>
 </html>
-```
